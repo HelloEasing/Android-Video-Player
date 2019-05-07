@@ -1,0 +1,101 @@
+apply plugin: 'com.android.library'
+
+android {
+
+    compileSdkVersion 27
+    buildToolsVersion "28.0.3"
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 27
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+    }
+
+    sourceSets {
+        main {
+            res.srcDirs =
+                    [
+                            'src/main/resource/common',
+                            'src/main/resource/icon',
+                            'src/main/resource/image',
+                            'src/main/resource/control',
+                            'src/main/resource/container',
+                            'src/main/resource/item',
+                            'src/main/resource/button',
+                            'src/main/resource/edit',
+                            'src/main/resource/progress',
+                            'src/main/resource/dialog',
+                            'src/main/resource/anim',
+                            'src/main/resource/color',
+                            'src/main/resource/menu',
+                            'src/main/resource/attr',
+                            'src/main/resource/string',
+                            'src/main/resource/style',
+                            'src/main/resource/test'
+                    ]
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+dependencies {
+    //官方支持库：support
+    api 'com.android.support:appcompat-v7:27.1.1'
+    api 'com.android.support.constraint:constraint-layout:1.1.3'
+    api 'com.android.support:recyclerview-v7:27.1.1'
+    api 'com.android.support:design:27.1.1'
+    api 'com.android.support:cardview-v7:27.1.1'
+    //常用库：commoms-lang
+    api files('libs/commons-lang3-3.7.jar')
+    //常用库：commoms-codec
+    api 'commons-codec:commons-codec:1.11'
+    //常用库：pinyin4j
+    api files('libs/pinyin4j-2.5.1.jar')
+    //常用库：dom4j
+    api files('libs/dom4j-2.1.0.jar')
+    api files('libs/jaxen-1.1.6.jar')
+    //常用库：Json，Gson
+    api files('libs/gson-2.8.5.jar')
+    //常用库：Permission
+    api 'com.yanzhenjie:permission:2.0.0-rc4'
+    //常用库：butter-knife
+    api 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    //常用库：glide
+    api files('libs/glide/glide-full-4.6.1.jar')
+    api files('libs/glide/glide-annotation-4.6.1.jar')
+    api files('libs/glide/glide-compiler-4.6.1.jar')
+    //常用库：OkHttp
+    api 'com.squareup.okhttp3:okhttp:3.10.0'
+    api 'com.squareup.okio:okio:1.14.1'
+    //常用库：EventBus
+    api 'org.greenrobot:eventbus:3.1.1'
+    //常用库：GreenDao
+    api 'org.greenrobot:greendao:3.2.2'
+    //常用库：lombok
+    api 'org.projectlombok:lombok:1.16.8'
+    //常用库：javax.annotation
+    api 'javax.annotation:javax.annotation-api:1.2'
+    //第三方库：MP3录音
+    api files('libs/mp3-recorder.aar')
+    //第三方控件：
+    api 'com.yanzhenjie:recyclerview-swipe:1.1.21'
+    api 'com.nineoldandroids:library:2.4.0'
+    api 'com.joooonho:selectableroundedimageview:1.0.1'
+    api 'cn.carbs.android:AvatarImageView:1.0.4'
+}
